@@ -1,0 +1,251 @@
+#WDU203c
+Những câu FALSE và in đậm tức chỉ có 1 cụm duy nhất trong suộc WDU203c:​
+[YÊU CẦU KHÔNG ĐƯỢC CLONE ĐEM BÁN, BÁN LÀ vào sổ đen :)]
+- You need to have a degree in psychology in order to understand the principles behind good UX.
+- "User Experience" only describes the experience that people have while actually using a product, and not other related experiences like acquiring the product or fixing it when it breaks.
+- In UX, "Design" is concerned only with the aesthetic (or beauty-related) aspects of products.
+- it is important to be good at drawing to use sketching in UX Design. (Gặp drawing là FALSE, có 3 câu thôi)
+- when sketching to come up with different design solutions, you should stop the first time you run out of ideas.
+- You should always include a pre-test questionnaire in any user test you conduct. (ALWAYS = FALSE)
+- It is not the role of the UX researcher to assign severity to problems found in user testing--this should be left up to the product owner.
+- If you take good notes, there is no reason to capture a screen recording of user test sessions for later review.
+- The primary concern of design is to create artifacts and systems that are aesthetically pleasing.
+- Bill Buxton states that all design is "compromise." By this he means that fundamentally no design is particularly good. (Bill Buxton = FALSE = Sketching)
+- Designers usually solve the exact design problem they are initially presented with. (usually với lofi = true còn usually với the exact design = false)
+- Designers conduct formative research using a single, unified set of methods. (using a single = false, còn a single designer(này là câu lofi ở trên) = true)
+- Formal research methods are always preferable to informal methods for doing formative research. ( câu nào có always cho false, ALWAYS = FALSE)
+- Designers should aim to generate about half a dozen solutions when they ideate.
+- Ideation mostly happens at the start of the design process when the designer is first coming up with possible solutions to the design problem.
+- You have to be good at drawing to create sketches that are useful for design.
+- Personas are purely fictional characters.
+- Excellent drawing skills are needed to create effective storyboards. (Gặp drawing là FALSE)
+- It's typically obvious which design solution, among alternatives they generated, designers should pursue.
+- Although there are different types of input, UX designers only need to focus on designing the information that users will explicitly enter into the system. (Although chỉ có duy nhất câu này trong src và chỉ có 2 câu có chữ "need to" đều là false )
+- It doesn't matter whether you initially create a low- or high-fidelity prototype. You can get the same kind of feedback on either.
+- Wizard of Oz prototypes are most useful for prototyping screen-based applications
+- Affordances of user interface don't have much influence on how easily users learn to use the system. (mình thấy cái gì phủ định cũng là false :)) )
+- In order to have a mental model of a system that enable them to use that system effectively, users need to understand the technical underpinnings of that system. ( chỉ có 2 câu có chữ "need to" đều là false )
+- While designers have to set defaults for many design elements, these default values rarely matter since users can just change them at any time. (Trong src chỉ có cái này có chữ while ở đầu và nó là false)
+- The many new technological trends we discussed means that UX design as a process is fundamentally changing and that what we discussed in this course is not going to be useful a year or two from now. (nó là FALSE và nó là NONE OF THE OTHERs )
+Bonus:
+Which of the following statement about open-ended questions is most FALSE? They are the easiest type of question to analyze.
+
+
+
+Những câu hay nhầm lẫn:​
+1.
+Which of the following is NOT an example of convenience sampling? d. Emailing all students at a university based on a random sample of email addresses provided by the administration.
+Which of the following is an example of purposive sampling? b. Asking people who use a site's shopping cart how they feel about that experience.
+Which of the following is NOT a way of reducing the burden for a respondent to participate in your survey? a. Asking people who use a site's shopping cart how they feel about that experience. (Key là a site's shopping cart)
+
+2.
+unable to find là execution (The Gulf of Execution)
+unable to determine là evaluation (The Gulf of evaluation)
+
+3. aesthetic and minimalist design
+Đáp án nếu gặp cụm này:
+reducing clutter and organizing information makes it easier for people to find what they are looking for
+Match between system and the real world
+Support recognition over recall
+
+4. Lo-fi
+Đáp án nếu gặp cụm này:
+You can work out aspects of graphic design such as fonts and color schemes, which have the largest impact on user experience.
+Ideation (đọc đáp án thấy Lo-fi prototyping thì khoanh Ideation)
+True ( A single designer can usually conduct a test of a lo-fi prototype by him/herself. )
+Hi-Fi Prototype (trong đáp án có Lo-Fi Prototype)
+
+5. Đáp án có mỗi chữ "Feedback"
+Key đề: A feature of an environment - Đáp án: An affordance hoặc A signifier
+Key đề: A change in an environment - Đáp án: Feedback
+Key đề: Reducing the set of available - Đáp án: Constraints
+Key đề: By helping users form effective - Đáp án: Conceptual models (cái đáp án này trong src có 2 câu cẩn thận nhầm lẫn với key trên)
+
+6. Sampling Frame
+This is the error that is introduced... miss some big chunk - d. Sampling error (câu này có 2 ý là sampling... dễ khoanh)
+Which of the following is NOT a type of sampling? - b. Sampling Frame
+Which of the following would NOT be an example of a sampling frame? a. A social media site, like Twitter
+NOT a dimension of survey modes? - Sampling frame
+
+7. qualitative data analysis
+The formal analysis of data that is not all quantified or quantifiable.
+Quotations Observed Inferred ( I, II and III)
+Clustering Finding (C. I and III) KHÔNG CÓ Running
+Make clusters out of related information. (cụm này duy nhất nên thuộc luôn)
+Understanding Making Condensing D. I, II, and III
+
+8. GẶP ĐÁP ÁN CÓ COMBO VÀ CHÚ Ý DẤU PHẨY (Xuống ý 9 coi): I, II and III (7 ý)
+- Có từ The ở đầu là khoanh I, II and III =)))
+(Which of the following should you aim for when arranging interviews? - 3 ý đều bắt đầu bằng The)
+(Which of the following is worth noticing in an observation?) - ý đầu bắt đầu bằng The I. The physical context where the user is.)
+
+- Có từ It is ở 3 ý (I, II and III)
+(In a semi-structured interview, why would you want to avoid a question such as "Was it because you didn't know about the 'undo' feature that you were unable to complete the task?")
+
+- Từ lạ vl là khoanh Quotations Observed Inferred (I, II and III)
+(What kinds of information might be part of qualitative data analysis?) - Key không phải qualitative data analysis đâu nhé
+
+- ĐÁP ÁN KHÁC: Bỏ ý Try the question (B. I and III - Cluster related questions together. Add follow-up questions.)
+(Once you have a list of core questions to ask, what should you do next in constructing the interview protocol?)
+
+- ĐÁP ÁN KHÁC: Clustering Finding (C. I and III) KHÔNG CÓ Running
+(Which of the following are techniques that might be used in qualitative data analysis?)
+
+- ĐÁP ÁN KHÁC: Gặp câu 3 They ở đầu thì khoanh (I and II)
+(Which of the following is true about affinity walls?)
+
+9. Chọn 3 đáp án nhưng thằng II có dấu phẩy =)): I, II, and III
+- Preparing Observing Analyzing ( I, II, and III )
+- 3 ý có chữ đầu tiên Qualitative research là khoanh ( I, II, and III )
+- Understanding Making Condensing ( I, II, and III )
+- ĐÁP ÁN KHÁC: e. I, III, IV, and V bỏ ý có II. Consistency
+
+10. Các ý chọn khác
+- Có từ It is ở 1 ý
+(I. It is difficult to access the product/experience.) - II and III ( Participants from a variety... - Time is limited)
+- II. Retelling what happened during each session of a usability test - Thấy retelling là loại ý này và chọn hết d. I, III, IV
+- e. I, III, IV, and V bỏ ý có II. Consistency
+- Before designing và Before considering (nhìn vô thấy ý có 2 before là khoanh 2 ý này =)))) )
+- interviews, behaviral (I and III)
+- Be online 10-15 minutes early LOẠI CÁI NÀY VÀ CHỌN HẾT
+- II. Feature driven usability testing MỘT Ý DUY NHẤT (key đề 2-3 people design teams)
+11.
+Recruiting criteria - Clear "tests" that determine whether someone is "in" or "out" of the target population for a user test are
+Diversity criteria - Factors that capture the ways in which you expect your users to differ can be expressed as
+
+12. Nomaza.com
+- Imagine a new shopping website named Nomaza.com. Nomaza.com offers a wide range of products. Which of the following might be a reasonable goal for a Nomaza.com user test?
+A. Can experienced online shoppers use Nomaza.com to find and purchase household items?
+C. Are novice Internet shoppers able to complete the checkout process on Nomaza.com?
+- testing participants' laptops to make sure their default browser is capable of displaying Nomaza.com (ý duy nhất có ý nomaza.com là khoanh)
+
+13. closed-ended
+- cái này gặp trong ý 3 IT IS (chọn I II and III)
+- Nominal closed-ended
+- Nominal closed-ended, choice forced
+- Use an open-ended question after every closed-ended question.
+- Use "select all that apply" responses rather than forced choices.
+- Use vague quantifiers rather than specific metrics
+
+14. Select all that apply
+- Chọn ý ABC bỏ ý D George does not care (đọc thấy george bỏ ý đó)
+- a. It specifies where the user should click to progress to the next screen. (1 ý a)
+- Use "select all that apply" responses rather than forced choices.
+- ABCD (chọn hết đó :) )
+
+15. coursera.org
+- B. It is not verifiable ("Go to coursera.org and find a course that looks interesting to you. Find out more about it.")
+- C. It "leads the witness" ("Go to coursera.org. Hover over the button "Explore", then click "Explore all of Coursera". Scroll until you find the link to "User Experience (UX) Research and Design" Specialization. Click on it. On the resulting page, find the first course and enroll in it.")
+
+16. pick all that apply
+- BC (Suộc đáp án là BCDE nhưng đề bắt chọn 2 wtf)
+B. Have stakeholders attend study sessions and participate in analyzing and interpreting data.
+C. Create and show videos of critical moments during tests
+
+- Bỏ Diary Study
+a. Personas
+b. Scenarios
+c. Diary Study
+d. Customer Journey Maps
+
+17. Nominal
+Nominal closed-ended
+What type of question is the following survey question: a. Bipolar ordinal (ko phải nominal)
+Which of the following is NOT an uncommon type of survey: b. Nominal
+
+18. Think-Aloud
+- Đáp án có Think-Aloud nhưng hãy chọn You plan to invite multiple stakeholders to observe the test sessions ( Which of the following would be a good reason for using a high-end usability testing lab with separate control and observation room?)
+- B. Prompt the user to convey their thinking out loud with short questions.
+- Think-aloud protocol (gặp 2 chữ này riêng là khoanh luôn - 2 câu)
+
+19. All of the above (hoặc chỉ có từ "All") - Có thể nó thay thành All of the others =)))) clm trường
+Nó là đáp án thì hãy khoanh luôn =))))
+
+21.
+This term describes the total set of people you want to be able to represent with your survey. D - Population
+What term is used to describe the actual questions you ask people? b - Instrument
+
+22. Nonresponse Error
+Measurement error (This is error that is introduced when your questions somehow don't actually get to the concept you're interested in.)
+Nonresponse error (This is the error that is introduced because some portion of the population is refusing to answer your questions.)
+Sampling error (This is the error that is introduced because the way you are asking questions is going to miss some big chunk of your population of interest.)
+
+Những keyword thấy là khoanh (Nhớ từ in đậm vì nó chỉ có 1 ở trong suộc):​
+Picture taken by the user using the phone camera
+Defaults are easily changed. (nhớ tới easily ta nhớ tới 1 câu false duy nhất và câu này =)))))
+Establishing the sale price for a product (UX thì làm gì liên quan tới thiết lập giá bán)
+Match between system and the real world (Gặp là khoanh không cần nghĩ nhiều)
+Reification (Sự thống nhất - câu này gặp 2 cái này gần giống nhau chọn C. Reification D. Reflection nha)
+To reduce recruitment costs (dề có chữ recuriting)
+Results can be biased because people semi-consciously will try to look acceptable to the interviewer (1 từ duy nhất trong src semi-consciously)
+The more money you offer, the more likely people are to participate. (Càng nhiều tiền, càng nhiều em bu)
+Make the survey as short as possible ( cẩn thận có cả câu keep the survey... nên nhớ combo as short as posible là được)
+Check map. Help. Activate function "Robbery" (câu có chữ wireframe hình ảnh)
+Concept Testing (Từ duy nhất, gặp là khoanh)
+Be willing to move notes and re-form clusters.
+Make clusters out of related information. (.....qualitative data analysis?)
+testing participants' laptops to make sure their default browser is capable of displaying Nomaza.com (ý duy nhất có ý nomaza.com là khoanh)
+Answers that are surprising or unexpected
+The summary should represent all of the notes in the cluster while being as specific and insightful as possible. (ý D)
+The KJ Method
+Because it focuses on the needs, preferences, and perspectives of a human user (or potential user).
+Making the question sound scientific (Câu này đọc hiểu cũng làm được)
+Memory fades over time, and often doesn't capture routine actions. (Trí nhớ phai dần theo thời gian, không thể nhớ nổi hoạt động thường ngày nhưng hãy nhìn lên trời có các vì sao tinh tú)
+Use vague quantifiers rather than specific metrics ( đề có cụm câu "closed-ended questions")
+Leads to acquiescence bias ( đề có Agree/Disagree)
+Writing a question that every respondent will answer in the same way. (every survey question?)
+Benchmark (Lưu ý có câu Benchmarking nữa và nếu gặp cái câu đó thì chọn Analytics Reviews)
+Dedicated only for conducting user tests (mỗi chữ Dedicated là unique rồi)
+Critical incidents(Sự cố nghiêm trọng) - B. Qualitative.
+Expected purchase price (Which of the following data types is typically not collected in a user test?)
+demand characteristic - B. Participants are likely to tell us what they think we want to hear
+Which of the following is not a characteristic of sketches done for the purposes of ideation? --> D Refined
+How many personas should designers create for a design project?--> the number of personas
+The use of keyboard "accelerator" shortcuts
+Number of questions you want to ask
+probability sample - C. Every member of your population has some chance to be selected for the survey.
+social exchange theory - d. People use trust as a basis to make a cost/benefit guess on the value of a social exchange.
+Launch an exploratory survey to determine UX goals.
+good open-ended question - B. Can you tell me about the most recent time when you used a GPS device?
+A sticky note on which you write relevant bits from your interview notes/recording and which is probably relevant for the user needs assessment.
+Prompt the user to convey their thinking out loud with short questions.
+they are the easiest type of question to analyze (key khoanh là easiest hoặc có câu easiest to hardest)
+Cognitive burden - (Which of the following is NOT a reason to randomize your response categories in a nominal survey question?)
+exact instructions for how - BỎ Ý NÀY CHỌN HẾT ABCEF
+The range of alternative ways that a design solution can work (đề có the "design space.")
+Allowing the moderator to declare a task "done" could give the participant more information than they would have if conducting the task outside the test environment (VÀ GẶP CÂU CHỈ CÓ moderator khoanh luôn)
+problem-finding -> chọn Critical inidents (nhưng nếu đáp án có Expected purchase price thì chọn câu này)
+đề có demographics(duy nhất) chọn cái dài nhất - They should focus on information that contributes to the distinct needs and potential barriers to and motivations for use that each class of target users has in relation to the technology being developed
+Informed Consent (cẩn thận bị nhầm lẫn với Acquiescence)
+Amazon's Mechanical Turk - d. Response rates for Turkers
+. Demographic questions like age, gender, and education level
+. The type of analysis you plan on doing (Which of the following is the most important consideration in picking what type of question type to use?)
+"How likely are you to participate in an online course in the future?" - B. The question stem doesn't include both poles of the scale.
+The discrepancy between what the user is trying to do and what he/she is able to do using the system's interface.
+What kinds of problems do users face when using Microsoft Word's spell-checking feature?
+Support recognition over recall
+"in-process feedback" - c. It helps prevent errors before they happen
+The summary should represent all of the notes in the cluster while being as specific and insightful as possible.
+Social determinists (từ duy nhất) - đề có (the social effects of technology )
+They are partners with the researchers administering the test, working with together to find flaws in the system design (partners là key)
+100 miliseconds
+QOC framework - C. Criteria
+new technological trends - nó là FALSE và nó là NONE OF THE OTHERs
+a. 5°
+c. The letter 'F'
+d. pop-out
+b. proximity
+b. About 7
+b. A schema
+d. accuracy of information
+b. A few seconds
+C. 5-10
+"keep lists of options short" - c. due to the limits of short-term memory...
+C. Whether users can successfully perform the tasks that you designed the system to support.
+C. The number of personas should match the number of classes of target users that the designers have identified in the formative work
+C. How many other interview participants there are (đọc hiểu đc)
+B. Behavioral - đề có "In the past week, how many hours did you spend completing coursework on edX? 0, 1-2, 3-5, or more than 5"
+nó có "1.3 Method" hình ảnh và đề là Is this a good scope for a user test? đáp án : YES :)))
+If you want to be able to conduct more complicated statistical analyses. - đề có a high response rate
+Playing jazz, because improvisation is required.
+HÌNH ẢNH "Finding 1. No Option to delete or modify Time Sheet entries." chọn User control and freedom

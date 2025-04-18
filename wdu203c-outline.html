@@ -1,116 +1,657 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WDU203c Quick Study Notes</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2c3e50;
+      --accent-color: #e74c3c;
+      --light-bg: #f5f5f5;
+      --dark-bg: #34495e;
+      --text-color: #333;
+      --light-text: #ecf0f1;
+      --border-radius: 8px;
+      --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: var(--light-bg);
+      color: var(--text-color);
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+      background-color: var(--dark-bg);
+      color: var(--light-text);
       padding: 2rem;
-    }
-    h1 {
       text-align: center;
-      color: #2c3e50;
+      box-shadow: var(--box-shadow);
     }
-    h2 {
-      color: #2980b9;
-    }
-    .section {
-      margin-bottom: 2rem;
-    }
-    ul {
-      padding-left: 1.5rem;
-    }
-    li {
+
+    h1 {
+      font-size: 2.5rem;
       margin-bottom: 0.5rem;
     }
-    strong {
-      color: #c0392b;
+
+    .subtitle {
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
     }
-    code {
-      background: #eee;
-      padding: 2px 6px;
-      border-radius: 4px;
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
     }
-    .link-section {
-      text-align: center;
-      margin-top: 40px;
+
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: var(--secondary-color);
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.5rem;
     }
-    .link-section a {
+
+    h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--secondary-color);
+    }
+
+    .note-section {
+      background: #fff;
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      margin-top: 2rem;
+      box-shadow: var(--box-shadow);
+    }
+
+    .warning {
+      color: var(--accent-color);
+      font-weight: bold;
+      background-color: rgba(231, 76, 60, 0.1);
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      margin: 1rem 0;
+      border-left: 4px solid var(--accent-color);
+    }
+
+    .false-statement {
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+
+    .category {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    li::before {
+      content: "•";
+      color: var(--primary-color);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .highlight {
+      background-color: #fff3cd;
+      border-left: 4px solid #ffeeba;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: var(--border-radius);
+    }
+
+    .tip {
+      background-color: rgba(52, 152, 219, 0.1);
+      border-left: 4px solid var(--primary-color);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: var(--border-radius);
+    }
+
+    .keyword {
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ddd;
+    }
+
+    .btn {
       display: inline-block;
-      padding: 10px 20px;
-      background-color: #3498db;
+      padding: 0.8rem 1.5rem;
+      background-color: var(--primary-color);
       color: white;
       text-decoration: none;
-      border-radius: 6px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-      transition: background-color 0.3s ease;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      font-weight: 500;
     }
-    .link-section a:hover {
+
+    .btn:hover {
       background-color: #2980b9;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-secondary {
+      background-color: var(--secondary-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: #1a252f;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: var(--primary-color);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      opacity: 0.8;
+    }
+
+    .back-to-top:hover {
+      opacity: 1;
+      transform: translateY(-5px);
+    }
+
+    footer {
+      background-color: var(--dark-bg);
+      color: var(--light-text);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--box-shadow);
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .card-title {
+      color: var(--secondary-color);
+      margin-bottom: 0.8rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .card-content {
+      color: var(--text-color);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+
+      .note-section {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1rem;
+    }
+
+    th,
+    td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: var(--secondary-color);
+      color: var(--light-text);
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+
+    tr:hover {
+      background-color: rgba(0, 0, 0, 0.05);
     }
   </style>
 </head>
+
 <body>
-  <h1>WDU203c Quick Study Notes</h1>
-  
-  <div class="section">
-    <h2>Các câu FALSE (In đậm là từ khóa duy nhất)</h2>
-    <ul>
-      <li><strong>You need to have a degree in psychology</strong> in order to understand UX principles.</li>
-      <li><strong>"User Experience" only describes the experience</strong> during product use.</li>
-      <li><strong>Design is only about aesthetics</strong>.</li>
-      <li><strong>It is important to be good at drawing</strong> to use sketching in UX.</li>
-      <li><strong>Stop sketching once you run out of ideas</strong>.</li>
-      <li><strong>Always include a pre-test questionnaire</strong>.</li>
-      <li><strong>UX researchers shouldn’t assign severity</strong>—leave it to product owner.</li>
-      <li><strong>No need to capture screen recordings</strong> if notes are good.</li>
-      <li><strong>Design is primarily for aesthetics</strong>.</li>
-      <li><strong>Bill Buxton says all design is compromise</strong>.</li>
-      <li><strong>Designers usually solve the exact problem</strong>.</li>
-      <li><strong>Formative research uses a single method</strong>.</li>
-      <li><strong>Formal methods are always better</strong>.</li>
-      <li><strong>You have to be good at drawing</strong> to sketch.</li>
-      <li><strong>Personas are purely fictional</strong>.</li>
-      <li><strong>Excellent drawing is needed for storyboards</strong>.</li>
-      <li><strong>It’s obvious which solution is best</strong>.</li>
-      <li><strong>UX only focuses on explicit user input</strong>.</li>
-      <li><strong>You get same feedback from low and high fidelity prototypes</strong>.</li>
-      <li><strong>Wizard of Oz only for screen-based apps</strong>.</li>
-      <li><strong>Affordances don’t impact usability</strong>.</li>
-      <li><strong>Users need to understand technical details</strong>.</li>
-      <li><strong>Defaults don’t matter</strong> since users can change them anytime.</li>
-      <li><strong>New tech makes current UX methods obsolete</strong>.</li>
-      <li><strong>Open-ended questions are the easiest to analyze</strong>.</li>
-    </ul>
+  <header>
+    <h1>WDU203c Quick Study Notes</h1>
+    <p class="subtitle">Tổng hợp các điểm quan trọng và mẹo làm bài</p>
+  </header>
+
+  <div class="container">
+    <div class="note-section">
+      <h2 id="key-false-statements">Các câu FALSE quan trọng</h2>
+      <p class="warning">KHÔNG ĐƯỢC CLONE ĐEM BÁN, AI BÁN LÀ GAY 🐧</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Chủ đề</th>
+              <th>Câu FALSE (từ khóa in đậm)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>UX Basics</td>
+              <td><strong>You need to have a degree in psychology</strong> in order to understand UX principles.</td>
+            </tr>
+            <tr>
+              <td>UX Scope</td>
+              <td><strong>"User Experience" only describes the experience</strong> during product use.</td>
+            </tr>
+            <tr>
+              <td>Design Focus</td>
+              <td><strong>Design is only about aesthetics</strong>.</td>
+            </tr>
+            <tr>
+              <td>Sketching</td>
+              <td><strong>It is important to be good at drawing</strong> to use sketching in UX.</td>
+            </tr>
+            <tr>
+              <td>Ideation</td>
+              <td><strong>Stop sketching once you run out of ideas</strong>.</td>
+            </tr>
+            <tr>
+              <td>User Testing</td>
+              <td><strong>Always include a pre-test questionnaire</strong>.</td>
+            </tr>
+            <tr>
+              <td>UX Research</td>
+              <td><strong>UX researchers shouldn't assign severity</strong>—leave it to product owner.</td>
+            </tr>
+            <tr>
+              <td>Documentation</td>
+              <td><strong>No need to capture screen recordings</strong> if notes are good.</td>
+            </tr>
+            <tr>
+              <td>Design Purpose</td>
+              <td><strong>Design is primarily for aesthetics</strong>.</td>
+            </tr>
+            <tr>
+              <td>Design Theory</td>
+              <td><strong>Bill Buxton says all design is compromise</strong>.</td>
+            </tr>
+            <tr>
+              <td>Problem Solving</td>
+              <td><strong>Designers usually solve the exact problem</strong>.</td>
+            </tr>
+            <tr>
+              <td>Research Methods</td>
+              <td><strong>Formative research uses a single method</strong>.</td>
+            </tr>
+            <tr>
+              <td>Research Approach</td>
+              <td><strong>Formal methods are always better</strong>.</td>
+            </tr>
+            <tr>
+              <td>Sketching Skills</td>
+              <td><strong>You have to be good at drawing</strong> to sketch.</td>
+            </tr>
+            <tr>
+              <td>Personas</td>
+              <td><strong>Personas are purely fictional</strong>.</td>
+            </tr>
+            <tr>
+              <td>Storyboarding</td>
+              <td><strong>Excellent drawing is needed for storyboards</strong>.</td>
+            </tr>
+            <tr>
+              <td>Design Decisions</td>
+              <td><strong>It's obvious which solution is best</strong>.</td>
+            </tr>
+            <tr>
+              <td>UX Focus</td>
+              <td><strong>UX only focuses on explicit user input</strong>.</td>
+            </tr>
+            <tr>
+              <td>Prototyping</td>
+              <td><strong>You get same feedback from low and high fidelity prototypes</strong>.</td>
+            </tr>
+            <tr>
+              <td>Wizard of Oz</td>
+              <td><strong>Wizard of Oz only for screen-based apps</strong>.</td>
+            </tr>
+            <tr>
+              <td>Affordances</td>
+              <td><strong>Affordances don't impact usability</strong>.</td>
+            </tr>
+            <tr>
+              <td>Mental Models</td>
+              <td><strong>Users need to understand technical details</strong>.</td>
+            </tr>
+            <tr>
+              <td>Defaults</td>
+              <td><strong>Defaults don't matter</strong> since users can change them anytime.</td>
+            </tr>
+            <tr>
+              <td>UX Evolution</td>
+              <td><strong>New tech makes current UX methods obsolete</strong>.</td>
+            </tr>
+            <tr>
+              <td>Research Questions</td>
+              <td><strong>Open-ended questions are the easiest to analyze</strong>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="note-section">
+      <h2 id="key-concepts">Khái niệm quan trọng</h2>
+
+      <div class="grid">
+        <div class="card">
+          <div class="card-title">Gulf of Execution vs. Evaluation</div>
+          <div class="card-content">
+            <ul>
+              <li><strong>Gulf of Execution:</strong> Unable to find (what to do)</li>
+              <li><strong>Gulf of Evaluation:</strong> Unable to determine (what happened)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Sampling Types</div>
+          <div class="card-content">
+            <ul>
+              <li><strong>Convenience:</strong> Easily accessible participants</li>
+              <li><strong>Purposive:</strong> Specifically selected participants</li>
+              <li><strong>Probability:</strong> Every member has chance to be selected</li>
+              <li><strong>NOT a type:</strong> Sampling Frame</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Error Types</div>
+          <div class="card-content">
+            <ul>
+              <li><strong>Measurement error:</strong> Questions don't capture concept</li>
+              <li><strong>Nonresponse error:</strong> Population refuses to answer</li>
+              <li><strong>Sampling error:</strong> Missing big chunk of population</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Affordances & Related Concepts</div>
+          <div class="card-content">
+            <ul>
+              <li><strong>Affordance:</strong> A feature of an environment</li>
+              <li><strong>Feedback:</strong> A change in an environment</li>
+              <li><strong>Constraints:</strong> Reducing the set of available options</li>
+              <li><strong>Conceptual models:</strong> Help users form effective understanding</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Lo-fi vs. Hi-fi Prototypes</div>
+          <div class="card-content">
+            <ul>
+              <li><strong>Lo-fi:</strong> Used for ideation, can be tested by single designer</li>
+              <li><strong>Hi-fi:</strong> Used for detailed testing, closer to final product</li>
+              <li><strong>FALSE:</strong> They provide the same kind of feedback</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Qualitative Data Analysis</div>
+          <div class="card-content">
+            <ul>
+              <li><strong>Includes:</strong> Quotations, Observed, Inferred</li>
+              <li><strong>Techniques:</strong> Clustering, Finding (NOT Running)</li>
+              <li><strong>Process:</strong> Understanding, Making, Condensing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note-section">
+      <h2 id="test-taking-tips">Mẹo làm bài thi</h2>
+
+      <div class="category">
+        <h3>Nhận biết câu FALSE</h3>
+        <div class="tip">
+          <ul>
+            <li>Gặp từ "<span class="keyword">drawing</span>" là FALSE</li>
+            <li>Gặp từ "<span class="keyword">always</span>", "<span class="keyword">must</span>", "<span
+                class="keyword">have to</span>" là FALSE</li>
+            <li>Gặp từ "<span class="keyword">need to</span>" là FALSE (trong src chỉ có 2 câu có từ này đều là FALSE)
+            </li>
+            <li>Gặp từ phủ định như "<span class="keyword">don't</span>", "<span class="keyword">rarely</span>", "<span
+                class="keyword">only</span>" thường là FALSE</li>
+            <li>Gặp từ "<span class="keyword">while</span>", "<span class="keyword">although</span>" ở đầu câu thường là
+              FALSE</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="category">
+        <h3>Nhận biết câu TRUE</h3>
+        <div class="tip">
+          <ul>
+            <li>Gặp cụm "<span class="keyword">Match between system and the real world</span>" là TRUE</li>
+            <li>Gặp cụm "<span class="keyword">Conceptual models</span>" là TRUE</li>
+            <li>Gặp cụm "<span class="keyword">Support recognition over recall</span>" là TRUE</li>
+            <li>Gặp cụm "<span class="keyword">A single designer can usually conduct</span>" là TRUE</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="category">
+        <h3>Combo đáp án I, II, III</h3>
+        <div class="highlight">
+          <ul>
+            <li>Có từ "<span class="keyword">The</span>" ở đầu 3 ý là khoanh I, II and III</li>
+            <li>Có từ "<span class="keyword">It is</span>" ở 3 ý là khoanh I, II and III</li>
+            <li>Có từ "<span class="keyword">Qualitative research</span>" ở đầu 3 ý là khoanh I, II and III</li>
+            <li>Từ lạ là khoanh Quotations, Observed, Inferred (I, II and III)</li>
+            <li>Bỏ ý Try the question (B. I and III - Cluster related questions together. Add follow-up questions.)</li>
+            <li>Bỏ ý Running (C. I and III) - Clustering, Finding</li>
+            <li>Gặp câu 3 They ở đầu thì khoanh (I and II)</li>
+            <li>Gặp "retelling" là loại ý này và chọn hết d. I, III, IV</li>
+            <li>Bỏ ý có II. Consistency (e. I, III, IV, and V)</li>
+            <li>Nhìn thấy ý có 2 "before" là khoanh 2 ý này</li>
+            <li>Interviews, behavioral (I and III)</li>
+            <li>Loại "Be online 10-15 minutes early" và chọn hết các ý còn lại</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="note-section">
+      <h2 id="unique-keywords">Từ khóa độc nhất - gặp là khoanh</h2>
+
+      <div class="grid">
+        <div class="card">
+          <div class="card-title">Từ khóa về UX</div>
+          <div class="card-content">
+            <ul>
+              <li><span class="keyword">Match between system and the real world</span></li>
+              <li><span class="keyword">Support recognition over recall</span></li>
+              <li><span class="keyword">Concept Testing</span></li>
+              <li><span class="keyword">The KJ Method</span></li>
+              <li><span class="keyword">Dedicated only for conducting user tests</span></li>
+              <li><span class="keyword">Critical incidents</span> (Sự cố nghiêm trọng)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Từ khóa về User Research</div>
+          <div class="card-content">
+            <ul>
+              <li><span class="keyword">Picture taken by the user using the phone camera</span></li>
+              <li><span class="keyword">semi-consciously</span></li>
+              <li><span class="keyword">To reduce recruitment costs</span></li>
+              <li><span class="keyword">The more money you offer, the more likely people are to participate</span></li>
+              <li><span class="keyword">Make the survey as short as possible</span></li>
+              <li><span class="keyword">Demand characteristic</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Từ khóa về Design</div>
+          <div class="card-content">
+            <ul>
+              <li><span class="keyword">Defaults are easily changed</span></li>
+              <li><span class="keyword">Establishing the sale price for a product</span></li>
+              <li><span class="keyword">Reification</span> (Sự thống nhất)</li>
+              <li><span class="keyword">Expected purchase price</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Từ khóa về Nomaza.com</div>
+          <div class="card-content">
+            <ul>
+              <li>Reasonable goal: "<span class="keyword">Can experienced online shoppers use Nomaza.com to find and
+                  purchase household items?</span>"</li>
+              <li>Reasonable goal: "<span class="keyword">Are novice Internet shoppers able to complete the checkout
+                  process on Nomaza.com?</span>"</li>
+              <li>"<span class="keyword">Testing participants' laptops to make sure their default browser is capable of
+                  displaying Nomaza.com</span>"</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note-section">
+      <h2 id="specific-questions">Một số câu hỏi cụ thể</h2>
+
+      <div class="category">
+        <h3>Về Coursera.org</h3>
+        <ul>
+          <li>NOT verifiable: "<span class="keyword">Go to coursera.org and find a course that looks interesting to you.
+              Find out more about it.</span>"</li>
+          <li>"Leads the witness": "<span class="keyword">Go to coursera.org. Hover over the button "Explore", then
+              click "Explore all of Coursera". Scroll until you find the link to "User Experience (UX) Research and
+              Design" Specialization. Click on it. On the resulting page, find the first course and enroll in
+              it.</span>"</li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h3>Về Recruiting & Stakeholders</h3>
+        <ul>
+          <li>Pick: "<span class="keyword">Have stakeholders attend study sessions and participate in analyzing and
+              interpreting data.</span>"</li>
+          <li>Pick: "<span class="keyword">Create and show videos of critical moments during tests.</span>"</li>
+          <li>Bỏ: "<span class="keyword">Diary Study</span>" (khi đáp án có: Personas, Scenarios, Diary Study, Customer
+            Journey Maps)</li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h3>Về Think-Aloud Protocol</h3>
+        <ul>
+          <li>Chọn: "<span class="keyword">You plan to invite multiple stakeholders to observe the test
+              sessions.</span>" (Khi hỏi về high-end usability testing lab)</li>
+          <li>Chọn: "<span class="keyword">Prompt the user to convey their thinking out loud with short
+              questions.</span>"</li>
+          <li>Gặp cụm "<span class="keyword">Think-aloud protocol</span>" là khoanh luôn</li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h3>Về "All of the above"</h3>
+        <ul>
+          <li>Gặp đáp án có "<span class="keyword">All of the above</span>" hoặc "<span class="keyword">All of the
+              others</span>" là khoanh luôn</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="navigation">
+      <a href="./" class="btn">Quay lại trang chính</a>
+      <a href="#" class="btn btn-secondary" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Về
+        đầu trang</a>
+    </div>
   </div>
 
-  <div class="section">
-    <h2>Ghi chú nhầm lẫn thường gặp</h2>
-    <ul>
-      <li><strong>Convenience vs. purposive sampling</strong> - chú ý từ khoá như “a site's shopping cart”.</li>
-      <li><strong>Gulf of Execution</strong> = unable to find / <strong>Gulf of Evaluation</strong> = unable to determine.</li>
-      <li><strong>Aesthetic and minimalist design</strong>: giúp người dùng dễ tìm thông tin hơn.</li>
-      <li><strong>Lo-fi Prototype</strong>: dùng cho ideation, true, cá nhân có thể test, v.v.</li>
-      <li><strong>Affordance</strong> = feature; <strong>Feedback</strong> = change; <strong>Constraint</strong> = reduce set; <strong>Conceptual model</strong> = hỗ trợ hiểu.</li>
-      <li><strong>Sampling Frame</strong> không phải sampling type.</li>
-      <li><strong>Qualitative data analysis</strong>: Quotations, Observed, Inferred; Clustering and Finding.</li>
-      <li>Gặp <strong>I, II and III</strong> hoặc <strong>It is</strong> trong 3 ý là chọn hết.</li>
-      <li><strong>Nomaza.com</strong>: chọn ý nào đề cập trực tiếp đến website.</li>
-      <li><strong>Closed-ended questions</strong>: chú ý forced choice, vague quantifiers.</li>
-      <li><strong>Think-Aloud protocol</strong>: gặp là khoanh, hoặc có đề cập đến stakeholders và việc observe.</li>
-      <li><strong>All of the above / All of the others</strong>: gặp là khoanh.</li>
-      <li><strong>Sampling error</strong>: khi bỏ sót một nhóm người lớn.</li>
-    </ul>
-  </div>
+  <footer>
+    <p>WDU203c UX Notes - Comprehensive Study Guide</p>
+  </footer>
 
-  <div class="link-section">
-    <a href="./">Trở về</a>
-  </div>
+  <a href="#" class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑</a>
 </body>
+
 </html>

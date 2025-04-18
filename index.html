@@ -5,122 +5,490 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WDU203c UX Notes</title>
   <style>
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2c3e50;
+      --accent-color: #e74c3c;
+      --light-bg: #f5f5f5;
+      --dark-bg: #34495e;
+      --text-color: #333;
+      --light-text: #ecf0f1;
+      --border-radius: 8px;
+      --box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
-      background-color: #f5f5f5;
-      color: #333;
-      padding: 20px;
+      background-color: var(--light-bg);
+      color: var(--text-color);
+      padding: 0;
+      margin: 0;
     }
+    
+    header {
+      background-color: var(--dark-bg);
+      color: var(--light-text);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--box-shadow);
+    }
+    
     h1 {
-      color: #2c3e50;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
+    
+    .subtitle {
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
     h2 {
-      margin-top: 30px;
-      color: #34495e;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: var(--secondary-color);
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.5rem;
     }
+    
+    h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--secondary-color);
+    }
+    
     .note-section {
       background: #fff;
-      border-radius: 8px;
-      padding: 20px;
-      margin-top: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      margin-top: 2rem;
+      box-shadow: var(--box-shadow);
     }
+    
+    .warning {
+      color: var(--accent-color);
+      font-weight: bold;
+      background-color: rgba(231, 76, 60, 0.1);
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      margin: 1rem 0;
+      border-left: 4px solid var(--accent-color);
+    }
+    
     .false-statement {
-      color: red;
+      color: var(--accent-color);
       font-weight: bold;
     }
+    
+    .category {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
     ul {
-      list-style-type: square;
-      padding-left: 20px;
+      list-style-type: none;
+      padding-left: 0;
     }
+    
     li {
-      margin-bottom: 8px;
+      margin-bottom: 0.8rem;
+      padding-left: 1.5rem;
+      position: relative;
     }
+    
+    li::before {
+      content: "•";
+      color: var(--primary-color);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+    
     .highlight {
       background-color: #fff3cd;
       border-left: 4px solid #ffeeba;
-      padding: 10px;
-      margin: 10px 0;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: var(--border-radius);
     }
-    .link-section {
-      text-align: center;
-      margin-top: 40px;
+    
+    .tip {
+      background-color: rgba(52, 152, 219, 0.1);
+      border-left: 4px solid var(--primary-color);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: var(--border-radius);
     }
-    .link-section a {
+    
+    .keyword {
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+    
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ddd;
+    }
+    
+    .btn {
       display: inline-block;
-      padding: 10px 20px;
-      background-color: #3498db;
+      padding: 0.8rem 1.5rem;
+      background-color: var(--primary-color);
       color: white;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: var(--border-radius);
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
+      font-weight: 500;
     }
-    .link-section a:hover {
+    
+    .btn:hover {
       background-color: #2980b9;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .btn-secondary {
+      background-color: var(--secondary-color);
+    }
+    
+    .btn-secondary:hover {
+      background-color: #1a252f;
+    }
+    
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: var(--primary-color);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      opacity: 0.8;
+    }
+    
+    .back-to-top:hover {
+      opacity: 1;
+      transform: translateY(-5px);
+    }
+    
+    footer {
+      background-color: var(--dark-bg);
+      color: var(--light-text);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .note-section {
+        padding: 1.5rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>WDU203c UX Notes</h1>
+  <header>
+    <h1>WDU203c UX Notes</h1>
+    <p class="subtitle">Comprehensive study guide for UX principles and concepts</p>
+  </header>
 
-  <div class="note-section">
-    <h2>Những câu FALSE</h2>
-    <p class="false-statement">YÊU CẦU KHÔNG CLONE ĐEM BÁN, BÁN LÀ GAY 🐧</p>
-    <ul>
-      <li>You need to have a degree in psychology in order to understand the principles behind good UX.</li>
-      <li>"User Experience" only describes the experience that people have while actually using a product...</li>
-      <li>In UX, "Design" is concerned only with the aesthetic...</li>
-      <li>It is important to be good at drawing to use sketching in UX Design.</li>
-      <li>When sketching to come up with different design solutions, you should stop the first time you run out of ideas.</li>
-      <li>You should always include a pre-test questionnaire in any user test you conduct.</li>
-      <li>It is not the role of the UX researcher to assign severity to problems found in user testing...</li>
-      <li>If you take good notes, there is no reason to capture a screen recording...</li>
-      <li>The primary concern of design is to create artifacts that are aesthetically pleasing.</li>
-      <li>Bill Buxton states that all design is "compromise."...</li>
-      <li>Designers usually solve the exact design problem they are initially presented with.</li>
-      <li>Designers conduct formative research using a single, unified set of methods.</li>
-      <li>Formal research methods are always preferable to informal methods...</li>
-      <li>You have to be good at drawing to create sketches that are useful for design.</li>
-      <li>Personas are purely fictional characters.</li>
-      <li>Excellent drawing skills are needed to create effective storyboards.</li>
-      <li>It's typically obvious which design solution... designers should pursue.</li>
-      <li>Although there are different types of input, UX designers only need to focus on...</li>
-      <li>It doesn't matter whether you initially create a low- or high-fidelity prototype...</li>
-      <li>Wizard of Oz prototypes are most useful for prototyping screen-based applications.</li>
-      <li>Affordances of user interface don't have much influence...</li>
-      <li>Users need to understand the technical underpinnings of a system to use it effectively.</li>
-      <li>While designers have to set defaults..., these default values rarely matter...</li>
-      <li>The many new technological trends we discussed means that UX design as a process is fundamentally changing...</li>
-      <li>Bonus: Open-ended questions are the easiest type of question to analyze.</li>
-    </ul>
+  <div class="container">
+    <div class="note-section">
+      <h2 id="false-statements">Những câu FALSE và in đậm</h2>
+      <p class="warning">KHÔNG ĐƯỢC CLONE ĐEM BÁN, AI BÁN LÀ GAY 🐧</p>
+      <p>Những câu FALSE và in đậm tức chỉ có 1 cụm duy nhất trong suộc WDU203c:</p>
+      
+      <div class="category">
+        <h3>Về UX và Design</h3>
+        <ul>
+          <li><span class="false-statement">You need to have a degree in psychology</span> in order to understand the principles behind good UX.</li>
+          <li><span class="false-statement">"User Experience" only describes the experience</span> that people have while actually using a product, and not other related experiences like acquiring the product or fixing it when it breaks.</li>
+          <li><span class="false-statement">In UX, "Design" is concerned only with the aesthetic</span> (or beauty-related) aspects of products.</li>
+          <li><span class="false-statement">The primary concern of design is to create artifacts and systems</span> that are aesthetically pleasing.</li>
+        </ul>
+      </div>
+      
+      <div class="category">
+        <h3>Về Sketching và Drawing</h3>
+        <ul>
+          <li><span class="false-statement">It is important to be good at drawing</span> to use sketching in UX Design.</li>
+          <li><span class="false-statement">When sketching to come up with different design solutions</span>, you should stop the first time you run out of ideas.</li>
+          <li><span class="false-statement">You have to be good at drawing</span> to create sketches that are useful for design.</li>
+          <li><span class="false-statement">Excellent drawing skills are needed</span> to create effective storyboards.</li>
+        </ul>
+      </div>
+      
+      <div class="category">
+        <h3>Về User Testing</h3>
+        <ul>
+          <li><span class="false-statement">You should always include a pre-test questionnaire</span> in any user test you conduct.</li>
+          <li><span class="false-statement">It is not the role of the UX researcher to assign severity</span> to problems found in user testing--this should be left up to the product owner.</li>
+          <li><span class="false-statement">If you take good notes, there is no reason to capture a screen recording</span> of user test sessions for later review.</li>
+        </ul>
+      </div>
+      
+      <div class="category">
+        <h3>Về Design Process</h3>
+        <ul>
+          <li><span class="false-statement">Bill Buxton states that all design is "compromise."</span> By this he means that fundamentally no design is particularly good.</li>
+          <li><span class="false-statement">Designers usually solve the exact design problem</span> they are initially presented with.</li>
+          <li><span class="false-statement">Designers conduct formative research using a single, unified set of methods.</span></li>
+          <li><span class="false-statement">Formal research methods are always preferable</span> to informal methods for doing formative research.</li>
+          <li><span class="false-statement">Designers should aim to generate about half a dozen solutions</span> when they ideate.</li>
+          <li><span class="false-statement">Ideation mostly happens at the start of the design process</span> when the designer is first coming up with possible solutions to the design problem.</li>
+          <li><span class="false-statement">Personas are purely fictional characters.</span></li>
+          <li><span class="false-statement">It's typically obvious which design solution</span>, among alternatives they generated, designers should pursue.</li>
+        </ul>
+      </div>
+      
+      <div class="category">
+        <h3>Về Prototyping và Interfaces</h3>
+        <ul>
+          <li><span class="false-statement">Although there are different types of input, UX designers only need to focus on</span> designing the information that users will explicitly enter into the system.</li>
+          <li><span class="false-statement">It doesn't matter whether you initially create a low- or high-fidelity prototype.</span> You can get the same kind of feedback on either.</li>
+          <li><span class="false-statement">Wizard of Oz prototypes are most useful</span> for prototyping screen-based applications.</li>
+          <li><span class="false-statement">Affordances of user interface don't have much influence</span> on how easily users learn to use the system.</li>
+          <li><span class="false-statement">In order to have a mental model of a system that enable them to use that system effectively, users need to understand</span> the technical underpinnings of that system.</li>
+          <li><span class="false-statement">While designers have to set defaults for many design elements, these default values rarely matter</span> since users can just change them at any time.</li>
+        </ul>
+      </div>
+      
+      <div class="category">
+        <h3>Về UX Trends</h3>
+        <ul>
+          <li><span class="false-statement">The many new technological trends we discussed means that UX design as a process is fundamentally changing</span> and that what we discussed in this course is not going to be useful a year or two from now.</li>
+        </ul>
+      </div>
+      
+      <div class="category">
+        <h3>Bonus</h3>
+        <ul>
+          <li>Which of the following statement about open-ended questions is most FALSE? <span class="false-statement">They are the easiest type of question to analyze.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note-section">
+      <h2 id="common-confusions">Những câu hay nhầm lẫn</h2>
+      
+      <div class="category">
+        <h3>1. Về Sampling</h3>
+        <ul>
+          <li><strong>Convenience vs. Purposive sampling:</strong>
+            <ul>
+              <li>NOT an example of convenience sampling: "Emailing all students at a university based on a random sample of email addresses provided by the administration."</li>
+              <li>Example of purposive sampling: "Asking people who use a site's shopping cart how they feel about that experience."</li>
+              <li>NOT a way of reducing burden: "Asking people who use a site's shopping cart how they feel about that experience." (Key là "a site's shopping cart")</li>
+            </ul>
+          </li>
+          <li><strong>Sampling Frame:</strong>
+            <ul>
+              <li>"This is the error that is introduced... miss some big chunk" - Sampling error</li>
+              <li>NOT a type of sampling: "Sampling Frame"</li>
+              <li>NOT an example of a sampling frame: "A social media site, like Twitter"</li>
+              <li>NOT a dimension of survey modes: "Sampling frame"</li>
+            </ul>
+          </li>
+          <li><strong>Errors:</strong>
+            <ul>
+              <li>Measurement error: Error introduced when questions don't get to the concept you're interested in</li>
+              <li>Nonresponse error: Error introduced when some portion of the population refuses to answer</li>
+              <li>Sampling error: Error introduced when your sampling method misses a big chunk of the population</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="category">
+        <h3>2. Về Gulf of Execution/Evaluation</h3>
+        <ul>
+          <li><strong>Gulf of Execution:</strong> Unable to find (what to do)</li>
+          <li><strong>Gulf of Evaluation:</strong> Unable to determine (what happened)</li>
+        </ul>
+      </div>
+      
+      <div class="category">
+        <h3>3. Về Aesthetic and Minimalist Design</h3>
+        <ul>
+          <li>Reducing clutter and organizing information makes it easier for people to find what they are looking for</li>
+          <li>Match between system and the real world</li>
+          <li>Support recognition over recall</li>
+        </ul>
+      </div>
+      
+      <div class="category">
+        <h3>4. Về Lo-fi Prototyping</h3>
+        <ul>
+          <li>You can work out aspects of graphic design such as fonts and color schemes, which have the largest impact on user experience.</li>
+          <li>Ideation (đọc đáp án thấy Lo-fi prototyping thì khoanh Ideation)</li>
+          <li>True (A single designer can usually conduct a test of a lo-fi prototype by him/herself.)</li>
+          <li>Hi-Fi Prototype (trong đáp án có Lo-Fi Prototype)</li>
+        </ul>
+      </div>
+      
+      <div class="category">
+        <h3>5. Về Affordances, Feedback, Constraints, và Conceptual Models</h3>
+        <ul>
+          <li>A feature of an environment - Đáp án: An affordance hoặc A signifier</li>
+          <li>A change in an environment - Đáp án: Feedback</li>
+          <li>Reducing the set of available - Đáp án: Constraints</li>
+          <li>By helping users form effective - Đáp án: Conceptual models</li>
+        </ul>
+      </div>
+      
+      <div class="category">
+        <h3>6. Về Qualitative Data Analysis</h3>
+        <ul>
+          <li>The formal analysis of data that is not all quantified or quantifiable.</li>
+          <li>Quotations, Observed, Inferred (I, II and III)</li>
+          <li>Clustering, Finding (C. I and III) KHÔNG CÓ Running</li>
+          <li>Make clusters out of related information. (cụm này duy nhất nên thuộc luôn)</li>
+          <li>Understanding, Making, Condensing (D. I, II, and III)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note-section">
+      <h2 id="tips">Tips khi làm đề</h2>
+      
+      <div class="tip">
+        <h3>Từ khóa nhận biết câu FALSE</h3>
+        <ul>
+          <li>Gặp từ "<span class="keyword">drawing</span>" là FALSE (có 3 câu thôi)</li>
+          <li>Gặp từ "<span class="keyword">always</span>" là FALSE</li>
+          <li>Gặp từ "<span class="keyword">need to</span>" là FALSE (trong src chỉ có 2 câu có từ này đều là FALSE)</li>
+          <li>Gặp từ phủ định như "<span class="keyword">don't</span>", "<span class="keyword">rarely</span>" thường là FALSE</li>
+        </ul>
+      </div>
+      
+      <div class="tip">
+        <h3>Từ khóa nhận biết câu TRUE</h3>
+        <ul>
+          <li>Gặp cụm "<span class="keyword">Match between system and the real world</span>" là TRUE</li>
+          <li>Gặp cụm "<span class="keyword">Conceptual models</span>" là TRUE</li>
+          <li>Gặp cụm "<span class="keyword">Support recognition over recall</span>" là TRUE</li>
+        </ul>
+      </div>
+      
+      <div class="tip">
+        <h3>Combo đáp án</h3>
+        <ul>
+          <li>Có từ "<span class="keyword">The</span>" ở đầu là khoanh I, II and III</li>
+          <li>Có từ "<span class="keyword">It is</span>" ở 3 ý là khoanh I, II and III</li>
+          <li>Từ lạ là khoanh Quotations, Observed, Inferred (I, II and III)</li>
+          <li>Bỏ ý Try the question (B. I and III - Cluster related questions together. Add follow-up questions.)</li>
+          <li>Bỏ ý Running (C. I and III) - Clustering, Finding</li>
+          <li>Gặp câu 3 They ở đầu thì khoanh (I and II)</li>
+        </ul>
+      </div>
+      
+      <div class="highlight">
+        <h3>Từ khóa độc nhất - gặp là khoanh</h3>
+        <ul>
+          <li><span class="keyword">Picture taken by the user using the phone camera</span></li>
+          <li><span class="keyword">Defaults are easily changed</span></li>
+          <li><span class="keyword">Establishing the sale price for a product</span> (UX thì làm gì liên quan tới thiết lập giá bán)</li>
+          <li><span class="keyword">Match between system and the real world</span></li>
+          <li><span class="keyword">Reification</span> (Sự thống nhất)</li>
+          <li><span class="keyword">To reduce recruitment costs</span></li>
+          <li><span class="keyword">semi-consciously</span></li>
+          <li><span class="keyword">The more money you offer, the more likely people are to participate</span></li>
+          <li><span class="keyword">Make the survey as short as possible</span></li>
+          <li><span class="keyword">Concept Testing</span></li>
+          <li><span class="keyword">Nomaza.com</span></li>
+          <li><span class="keyword">The KJ Method</span></li>
+          <li><span class="keyword">Dedicated only for conducting user tests</span></li>
+          <li><span class="keyword">Critical incidents</span> (Sự cố nghiêm trọng)</li>
+          <li><span class="keyword">Expected purchase price</span></li>
+          <li><span class="keyword">Demand characteristic</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note-section">
+      <h2 id="additional-notes">Một số lưu ý khác</h2>
+      
+      <div class="category">
+        <h3>Về Combo đáp án I, II, III</h3>
+        <ul>
+          <li>Preparing, Observing, Analyzing (I, II, and III)</li>
+          <li>3 ý có chữ đầu tiên Qualitative research là khoanh (I, II, and III)</li>
+          <li>Understanding, Making, Condensing (I, II, and III)</li>
+          <li>Có từ It is ở 1 ý (I. It is difficult to access the product/experience.) - II and III</li>
+          <li>II. Retelling what happened during each session of a usability test - Thấy retelling là loại ý này và chọn hết d. I, III, IV</li>
+          <li>e. I, III, IV, and V bỏ ý có II. Consistency</li>
+          <li>Before designing và Before considering (nhìn vô thấy ý có 2 before là khoanh 2 ý này)</li>
+          <li>Interviews, behavioral (I and III)</li>
+          <li>Be online 10-15 minutes early LOẠI CÁI NÀY VÀ CHỌN HẾT</li>
+          <li>II. Feature driven usability testing MỘT Ý DUY NHẤT (key đề 2-3 people design teams)</li>
+        </ul>
+      </div>
+      
+      <div class="category">
+        <h3>Về Nomaza.com</h3>
+        <ul>
+          <li>Reasonable goal: "Can experienced online shoppers use Nomaza.com to find and purchase household items?"</li>
+          <li>Reasonable goal: "Are novice Internet shoppers able to complete the checkout process on Nomaza.com?"</li>
+          <li>Testing participants' laptops to make sure their default browser is capable of displaying Nomaza.com (ý duy nhất có ý nomaza.com là khoanh)</li>
+        </ul>
+      </div>
+      
+      <div class="category">
+        <h3>Về Closed-ended Questions</h3>
+        <ul>
+          <li>Gặp trong ý 3 IT IS (chọn I II and III)</li>
+          <li>Nominal closed-ended</li>
+          <li>Nominal closed-ended, choice forced</li>
+          <li>Use an open-ended question after every closed-ended question.</li>
+          <li>Use "select all that apply" responses rather than forced choices.</li>
+          <li>Use vague quantifiers rather than specific metrics</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="navigation">
+      <a href="#" class="btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Về đầu trang</a>
+      <a href="wdu203c-outline.html" class="btn btn-secondary">Xem thêm lưu ý</a>
+    </div>
   </div>
 
-  <div class="note-section">
-    <h2>Những câu hay nhầm lẫn</h2>
-    <p>Gồm các nhóm chủ đề như: Sampling, Gulf of Execution/Evaluation, Lo-fi prototype, Storyboards, Feedback, Conceptual models...</p>
-    <div class="highlight">Gặp từ "drawing" hay "always" hoặc phủ định là FALSE</div>
-    <div class="highlight">Gặp cụm "Match between system and the real world" hoặc "Conceptual models" là TRUE</div>
-    <div class="highlight">Các combo đáp án có I, II, and III; hoặc có từ "The" ở đầu là thường đúng</div>
-    <div class="highlight">Từ khóa độc nhất: Nomaza.com, coursera.org, semi-consciously, Reification, KJ Method, etc.</div>
-    <div class="highlight">Gặp cụm như "Picture taken by the user using the phone camera" là khoanh ngay!</div>
-  </div>
+  <footer>
+    <p>WDU203c UX Notes - Comprehensive Study Guide</p>
+  </footer>
 
-  <div class="note-section">
-    <h2>Tips khi làm đề</h2>
-    <ul>
-      <li>Gặp "need to" là FALSE (trong src chỉ có 2 câu có từ này đều là FALSE)</li>
-      <li>Gặp "while", "although", "always", "it is important", "must", "have to" thường là FALSE</li>
-      <li>Các câu về sketching không cần giỏi vẽ</li>
-      <li>Gặp từ khóa lạ, cụ thể, hoặc dễ trigger như "dedicated", "default"... có thể là đáp án</li>
-      <li>Gặp câu hỏi về sampling frame, error, demographic thì nhớ phân biệt rõ khái niệm</li>
-    </ul>
-  </div>
-
-  <div class="link-section">
-    <a href="wdu203c-outline.html">Một số lưu ý khác</a>
-  </div>
-
+  <a href="#" class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑</a>
 </body>
 </html>
